@@ -163,3 +163,29 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<script>
+  $('#submit').on('click', function (event) {
+    event.preventDefault();
+
+    var name = $('#name').val().trim();
+    var pic = $('#photo').val().trim()
+    var eneteredData = [
+      $('#q1').val(),
+      $('#q2').val(),
+      $('#q3').val(),
+      $('#q4').val(),
+      $('#q5').val(),
+      $('#q6').val(),
+      $('#q7').val(),
+      $('#q8').val(),
+      $('#q9').val(),
+      $('#q10').val(),
+    ]
+
+    console.log(name);
+    console.log(pic);
+    console.log(eneteredData);
+  })
+
+</script>
