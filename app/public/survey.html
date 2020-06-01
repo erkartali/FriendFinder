@@ -163,18 +163,40 @@
 
       <button
         type="submit"
+        data-toggle="modal" data-target="#exampleModal"
         class="btn btn-primary btn-lg btn-block"
         id="submit"
       >
-        <i class="fa fa-check-circle" aria-hidden="true"></i> Submit
+        </i> Submit
       </button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="modal-text"></p>
+        <img id="modal-img" src="" alt="" style="height: 200px;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
       <hr />
       <footer class="footer">
         <div class="container">
           <p>
             <a href="/api/friends">API Friends List</a> |
-            <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a>
+            <a href="https://github.com/erkartali/FriendFinder" target="_blank">GitHub Repo</a>
           </p>
         </div>
       </footer>
@@ -203,31 +225,18 @@
         ],
       };
 
-      // console.log(newPerson);
-
       if (
-        newPerson.name != ""
-        // newPerson.photo != "" &&
-        // newPerson.enteredData[0] != 0 &&
-        // newPerson.enteredData[1] != 0 &&
-        // newPerson.enteredData[2] != 0 &&
-        // newPerson.enteredData[3] != 0 &&
-        // newPerson.enteredData[4] != 0 &&
-        // newPerson.enteredData[5] != 0 &&
-        // newPerson.enteredData[6] != 0 &&
-        // newPerson.enteredData[7] != 0 &&
-        // newPerson.enteredData[8] != 0 &&
-        // newPerson.enteredData[9] != 0
+        $("#name").val() != "" &&
+        $("#photo").val() != "" && 
+        $(".quiz-question").val() != 0
       ) {
         $.post("/api/friends", newPerson, function (data) {
-          console.log(data)
-        //modal here
-        // alert(`Your best match is ${data.name}
-        //  <a href="${data.pic}">`);
-
+          console.log(data);
+        
+          $(".modal-title").text("Beep Boop... Here's your friend!")
+          $("#modal-text").text(data.name);
+          $("#modal-img").attr("src", data.pic);
         });
-
-
 
         //reset field values after submit
         $("#name").val("");
@@ -235,7 +244,7 @@
         $(".quiz-question").val("");
       } else {
 
-        alert("You missed some info!");
+        $('#modal-text').text("You missed some info.")
 
       }
     });

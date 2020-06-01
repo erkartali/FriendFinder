@@ -2,25 +2,25 @@ var friendsArray = [
   {
     name: "Martha Sewart",
     pic:
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theverge.com%2F2017%2F5%2F3%2F15521142%2Fmartha-stewart-the-martha-blog-10-years-its-great&psig=AOvVaw0q3KO4c3IfOeHPNSivS4Jp&ust=1591029555122000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKDhpI7F3ukCFQAAAAAdAAAAABAF",
+      "https://i1.wp.com/www.usmagazine.com/wp-content/uploads/2020/04/Martha-Stewart-Shares-Her-Fun-and-Festive-Easter-Tradition-Feature.jpg?crop=0px%2C16px%2C1583px%2C894px&resize=1000%2C563&ssl=1",
     enteredData: ["3", "1", "4", "2", "4", "1", "2", "3", "5", "3"],
   },
   {
     name: "Snoop Dog",
     pic:
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.imdb.com%2Fname%2Fnm0004879%2F&psig=AOvVaw3uX7D-PT_wt8Xp68Y9PbK4&ust=1591029846285000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMjC75nG3ukCFQAAAAAdAAAAABAD",
+    "https://www.kuvo.org/wp-content/uploads/2019/11/snoop-dogg-i-wanna-thank-me-interview.jpg",
     enteredData: ["1", "4", "2", "1", "5", "3", "1", "2", "4", "2"],
   },
   {
     name: "Barack Obama",
     pic:
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftime.com%2F5082975%2Fbarack-obama-2017-book-music-list%2F&psig=AOvVaw2lkE0YkmEXSIixs5UYea4P&ust=1591029913549000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPjO3LjG3ukCFQAAAAAdAAAAABAF",
+      "https://www.rollingstone.com/wp-content/uploads/2020/06/Barack-Obama.jpg?resize=1800,1200&w=1200",
     enteredData: ["2", "4", "3", "1", "3", "4", "2", "1", "1", "4"],
   },
   {
     name: "Mother Teresa",
     pic:
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcruxnow.com%2Finterviews%2F2016%2F08%2Fdiary-miracle-mother-teresas-sainthood%2F&psig=AOvVaw3Z8bA4tFEh9LscelNIfp8k&ust=1591030030387000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODS0_PG3ukCFQAAAAAdAAAAABAD",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Mother_Teresa_1.jpg/800px-Mother_Teresa_1.jpg",
     enteredData: ["3", "5", "2", "3", "1", "4", "3", "1", "4", "3"],
   },
 ];

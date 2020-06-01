@@ -1,47 +1,46 @@
 var friendData = require("../data/friends");
 var fs = require("fs");
 
-module.exports = function(app) {
-  
-    app.get("/api/friends", function(req, res) {
-      res.json(friendData);
-    });
-  
-    app.post("/api/friends", function(req, res) {
-      console.log(req.body)
+module.exports = function (app) {
+	app.get("/api/friends", function (req, res) {
+		res.json(friendData);
+	});
 
-        var newPerson = req.body;
-        var newFriendTotal = 0;
-        var otherFriend = 0;
-        var bestFriend = 1000;
-        var bestFriendData = {};
+	app.post("/api/friends", function (req, res) {
+		console.log(req.body);
 
-        for (let index = 0; index < friendData.length; index++) {
-          newFriendTotal = 0
-          otherFriend = 0;
+		var newPerson = req.body;
+		var newFriendTotal = 0;
+		var otherFriend = 0;
+		var bestFriend = 1000;
+		var bestFriendData = {};
 
-          for (let i = 0; i < friendData[index].enteredData.length; i++) {
-            newFriendTotal += Number(newPerson.enteredData[i])
-            otherFriend += Number(friendData[index].enteredData[i])
-          } 
-          console.log('nft: ', newFriendTotal, 'of:', otherFriend )
-          if (Math.abs(newFriendTotal - otherFriend) < bestFriend) {
-            bestFriend = Math.abs(newFriendTotal - otherFriend)
-            bestFriendData = friendData[index];
-            console.log('bfd:', bestFriendData);
-          }
-        }
-      
-      friendData.push(req.body);
+		for (let index = 0; index < friendData.length; index++) {
+			newFriendTotal = 0;
+			otherFriend = 0;
 
-        // var getData = `var friendsArray = ${JSON.parse(friendData)}
-        // module.exports = friendsArray;
-        // `
+			for (let i = 0; i < friendData[index].enteredData.length; i++) {
+				newFriendTotal += Number(newPerson.enteredData[i]);
+				otherFriend += Number(friendData[index].enteredData[i]);
+			}
+			console.log("nft: ", newFriendTotal, "of:", otherFriend);
+			if (Math.abs(newFriendTotal - otherFriend) < bestFriend) {
+				bestFriend = Math.abs(newFriendTotal - otherFriend);
+				bestFriendData = friendData[index];
+				console.log("bfd:", bestFriendData);
+			}
+		}
 
-        // console.log(getData);
-        // fs.writeFileSync('./friends.js', getData, function(err, data) {
-        //   console.log(data)
-        // })
-          res.json(bestFriendData);
-    });
-  };
+		friendData.push(req.body);
+
+		// var getData = `var friendsArray = ${JSON.parse(friendData)}
+		// module.exports = friendsArray;
+		// `
+
+		// console.log(getData);
+		// fs.writeFileSync('./friends.js', getData, function(err, data) {
+		//   console.log(data)
+		// })
+		res.json(bestFriendData);
+	});
+};
